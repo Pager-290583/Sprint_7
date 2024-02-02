@@ -18,7 +18,7 @@ class TestGetAllOrder:
     @allure.label("owner", "Kozlov Oleg")
     @allure.link("https://qa-scooter.praktikum-services.ru", name="Website")
     @allure.issue("GetOrders-01")
-    @allure.testcase("TMS-02")
+    @allure.testcase("TMS-01")
     @allure.step("Отправка GET запроса с заголовком")
     def test_get_all_order(self):
         response = requests.get(base_url + end_point, headers=headers)

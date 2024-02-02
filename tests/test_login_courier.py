@@ -23,9 +23,9 @@ class TestLoginCourier:
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.label("owner", "Kozlov Oleg")
     @allure.link("https://qa-scooter.praktikum-services.ru", name="Website")
-    @allure.issue("LoginCourier-01")
-    @allure.testcase("TMS-03")
-    @allure.step("Отправка POST запроса - с валидными и невалидными данными")
+    @allure.issue("LoginCourier-04")
+    @allure.testcase("TMS-04")
+    @allure.step("Отправка POST запроса - с валидными данными")
     @pytest.mark.parametrize(("data", "status_code", "json"), [
         (
                 pytest.param(DataForTest.data_login, 200, {'id': 253230})
@@ -39,18 +39,17 @@ class TestLoginCourier:
     class TestLoginCourier:
 
         @allure.story("POST запрос - Авторизация курьера в системе")
-        @allure.title('Проверка авторизации в системе с валидными и невалидными данными')
+        @allure.title('Проверка авторизации в системе с не валидными данными')
         @allure.description(
-            "В этом тесте проверяются валидные и не валидные данные для авторизации. Авторизация возможна"
-            "с корректными данными. Система возвращает корректные стаус коды и тексты ошибок на "
-            "НЕвалидные данные")
+            "В этом тесте проверяются не валидные данные для авторизации. Система возвращает корректные стаус "
+            "коды и тексты ошибок на  НЕ валидные данные")
         @allure.tag("NewAPI", "Essentials", "LoginCourier")
         @allure.severity(allure.severity_level.CRITICAL)
         @allure.label("owner", "Kozlov Oleg")
         @allure.link("https://qa-scooter.praktikum-services.ru", name="Website")
-        @allure.issue("LoginCourier-01")
-        @allure.testcase("TMS-03")
-        @allure.step("Отправка POST запроса - с валидными и невалидными данными")
+        @allure.issue("LoginCourier-04")
+        @allure.testcase("TMS-04")
+        @allure.step("Отправка POST запроса - с не валидными данными")
         @pytest.mark.parametrize(("data", "status_code", "json"), [
             (
                     pytest.param(DataForTest.data_not_login, 400,

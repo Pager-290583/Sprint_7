@@ -23,8 +23,8 @@ class TestCreateOrder:
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.label("owner", "Kozlov Oleg")
     @allure.link("https://qa-scooter.praktikum-services.ru", name="Website")
-    @allure.issue("CreatOrder-01")
-    @allure.testcase("TMS-01")
+    @allure.issue("CreatOrder-03")
+    @allure.testcase("TMS-03")
     @allure.step("Отправка валыдного POST запроса с набором тестовых данных для создания заказа")
     @pytest.mark.parametrize(("data", "status_code"), [
         (
@@ -45,13 +45,13 @@ class TestCreateOrder:
     @allure.story("Тестирование создания заказа")
     @allure.title('Корректный ответ системы на не валидные данные')
     @allure.description(
-        "В этом тесте проверяются ответы системы не валидные данные, статус код и текст ошибки")
+        "В этом тесте проверяются ответы системы на не валидные данные, статус код и текст ошибки")
     @allure.tag("NewAPI", "Essentials", "CreatOrder")
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.label("owner", "Kozlov Oleg")
     @allure.link("https://qa-scooter.praktikum-services.ru", name="Website")
-    @allure.issue("CreatOrder-02")
-    @allure.testcase("TMS-02")
+    @allure.issue("CreatOrder-03")
+    @allure.testcase("TMS-03")
     @allure.step("Отправка невалидного POST запроса с набором тестовых данных для создания заказа")
     @pytest.mark.parametrize(("data", "status_code"), [
         (
