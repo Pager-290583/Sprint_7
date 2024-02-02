@@ -4,6 +4,7 @@ import requests
 from data_test.constants import Constants
 
 base_url = f'{Constants.URL}'
+end_point = f'{Constants.END_POINT_ORDERS}'
 headers = {"Content-Type": "application/json"}
 
 @allure.epic("Тестирование АПИ")
@@ -20,7 +21,7 @@ class TestGetAllOrder:
     @allure.testcase("TMS-02")
     @allure.step("Отправка GET запроса с заголовком")
     def test_get_all_order(self):
-        response = requests.get(base_url + "/api/v1/orders", headers=headers)
+        response = requests.get(base_url + end_point, headers=headers)
         assert response.status_code == 200
         result = response.json()
         assert type(result['orders'][0]) == dict
